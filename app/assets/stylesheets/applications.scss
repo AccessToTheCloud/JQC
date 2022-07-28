@@ -42,6 +42,14 @@
   }
 }
 
+// Make the advanced search popover wider and easier to read
+.popover.advanced-searching {
+  max-width: 500px
+}
+#new-search-toast {
+  width: 950px
+}
+
 .invoice-table-date {
   width: 20%;
 }

@@ -64,4 +64,14 @@ document.addEventListener("turbolinks:load", () => {
       }
     };
   }
+
+  // Show the new search change toast
+  // TODO: delete eventually when after 2022-08-07
+  const now = new Date();
+  const cutoff = new Date("2022-08-07");
+  if (now <= cutoff) {
+    const newSearchToastEl = document.getElementById("new-search-toast");
+    const toast = bootstrap.Toast.getInstance(newSearchToastEl);
+    toast.show();
+  }
 });

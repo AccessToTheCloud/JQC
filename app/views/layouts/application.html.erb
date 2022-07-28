@@ -61,5 +61,11 @@ If you have any issues at all then please contact me (Tom) and I'll get back to 
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
       })
+
+      // Initialise toasts
+      var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+      var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl)
+      })
     </script>
   </html>
