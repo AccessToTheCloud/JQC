@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_27_150052) do
+ActiveRecord::Schema.define(version: 2022_07_28_151202) do
 
   create_table "application_additional_informations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "info_date"
@@ -90,10 +90,12 @@ ActiveRecord::Schema.define(version: 2022_07_27_150052) do
     t.index ["application_type_id"], name: "index_applications_on_application_type_id"
     t.index ["client_council_id"], name: "fk_client_council"
     t.index ["client_id"], name: "fk_client"
+    t.index ["converted_to_from"], name: "index_applications_on_converted_to_from", type: :fulltext
     t.index ["council_id"], name: "fk_council"
     t.index ["description", "development_application_number", "street_name", "street_number", "lot_number"], name: "application_search_fulltext_index", type: :fulltext
     t.index ["owner_council_id"], name: "fk_owner_council"
     t.index ["owner_id"], name: "fk_owner"
+    t.index ["reference_number"], name: "index_applications_on_reference_number", type: :fulltext
     t.index ["suburb_id"], name: "fk_suburb"
   end
 

@@ -56,8 +56,8 @@ class ApplicationSearchResult < ApplicationRecord
               or match(owner) against (? in boolean mode) 
               or match(applicant) against (? in boolean mode) 
               or match(council) against (? in boolean mode) 
-              or reference_number like ?
-              or converted_to_from like ?
+              or match(reference_number) against (? in boolean mode)
+              or match(converted_to_from) against (? in boolean mode)
               ',
               search_text,
               search_text,
@@ -65,8 +65,8 @@ class ApplicationSearchResult < ApplicationRecord
               search_text,
               search_text,
               search_text,
-              "%#{search_text}%",
-              "%#{search_text}%"
+              search_text,
+              search_text
             )
           )
         }
